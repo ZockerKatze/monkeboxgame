@@ -1,3 +1,3 @@
 # monkeboxgame
 monkeee go weeee
-![Monkey](https://tenor.com/de/view/spinning-monkey-gif-21881306)
+![Monkey](https://c.tenor.com/RsjutCDdpg0AAAAd/tenor.gif)
