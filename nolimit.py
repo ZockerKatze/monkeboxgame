@@ -1,14 +1,10 @@
 import tkinter as tk
 import random
 
-def run_nl_canvas():
+def run_NOL():
     def create_random_box():
         nonlocal box_size
         canvas.delete("box")
-
-        # Adjust box size based on score
-        if score >= 1000:
-            box_size = max(50, initial_box_size - (score // 100 * size_reduction_step))
 
         # Generate random coordinates for the box
         x1 = random.randint(50, screen_width - 50 - box_size)
@@ -90,5 +86,5 @@ def run_nl_canvas():
 
 # To run the game, call run_nl_canvas()
 if __name__ == "__main__":
-    run_nl_canvas()
+    run_NOL()
 
