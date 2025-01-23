@@ -60,7 +60,7 @@ def run_nl_canvas():
 
     # Initialize main window
     root = tk.Tk()
-    root.title("MONKEEEEEEEEEEEE SIM")
+    root.title("monkesim")
     root.attributes("-fullscreen", True)
 
     # Screen dimensions
