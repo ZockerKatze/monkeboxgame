@@ -2,14 +2,19 @@ from nolimit import *
 from box import *
 import tkinter as tk
 from tkinter import ttk
-from debug import *
-
+from debug import RMon, readPID
+import os
 
 def display_window():
     # Function to be called when Button 1 is clicked
     def quitfunction():
         root.destroy()
         exit()
+
+    def debug():
+        debug.readPID()
+        print("debug true")
+
 
     def button1_action():
         run_nl_canvas()
@@ -44,6 +49,11 @@ def display_window():
     # Create and style Button 2
     button2 = ttk.Button(root, text="Run Endless!", command=button2_action)
     button2.pack(pady=20)
+
+    # make button for debugmode
+
+    debugbtn = ttk.Button(root, text="Debug", command=debug)
+    debugbtn.pack(pady=20)
 
     quitbutton = ttk.Button(root, text="Quit",command=quitfunction)
     quitbutton.pack(pady=20)

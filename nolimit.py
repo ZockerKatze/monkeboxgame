@@ -1,5 +1,9 @@
 import tkinter as tk
 import random
+import time
+
+
+# run nol
 
 def run_NOL():
     def create_random_box():
@@ -7,12 +11,14 @@ def run_NOL():
         canvas.delete("box")
 
         # Generate random coordinates for the box
+
         x1 = random.randint(50, screen_width - 50 - box_size)
         y1 = random.randint(50, screen_height - 50 - box_size)
         x2 = x1 + box_size
         y2 = y1 + box_size
 
         # Create the box
+
         box = canvas.create_rectangle(x1, y1, x2, y2, fill="white", tags="box")
         canvas.tag_bind("box", "<Button-1>", on_box_click)
 
@@ -54,6 +60,21 @@ def run_NOL():
     def exit_window(event=None):
         root.quit()
 
+    def FPSTIME():
+        start = time.time()
+        fps=0
+        otime = time.time()
+        test = ot
+        while test < 1:
+            fps += 1
+            test += otime
+            if otime == 0:
+                break
+        if fps != 1:
+            print(f"FPS: {fps}")
+
+
+
     # Initialize main window
     root = tk.Tk()
     root.title("MONKEEEEEEEEEEEE SIM")
@@ -79,10 +100,12 @@ def run_NOL():
 
     # Bind events
     root.bind("<Escape>", callpause)
+    root.bind("<Return>", FPSTIME)
     root.bind("<Control-q>", exit_window)
 
     create_random_box()
     root.mainloop()
+
 
 # To run the game, call run_nl_canvas()
 if __name__ == "__main__":
