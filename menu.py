@@ -1,22 +1,29 @@
+import os
+
+# import locals
+
 from cube import *
 from nolimit import *
 from box import *
+from credits import *
+
+
 import tkinter as tk
 from tkinter import ttk
 import threading #Use Threading for Performance
-import subprocess
-from credits import *
-
-htop = True
-
 
 def display_window():
     global htop
 
-
     def credss():
+
+        # this will NOT thread to another thread!
+        # idk why tho
+
+
         credthread = threading.Thread(target=creds(), daemon=True)
         credthread.start()
+
 
     def quitfunction():
         root.destroy()
@@ -66,7 +73,7 @@ def display_window():
     button2 = ttk.Button(root, text="Run Endless!", command=button2_action)
     button2.pack(pady=20)
 
-    cubebtn = ttk.Button(root, text="TkInter Test", command=cube_action)
+    cubebtn = ttk.Button(root, text="tkinter test", command=cube_action)
     cubebtn.pack(pady=20)
 
     # Add Quit button
