@@ -86,11 +86,12 @@ def cuberotate():
         angle_y += 0.01
 
         # Call the function again to create an animation effect
-        canvas.after(10, rotate_cube)
+        canvas.after(5, rotate_cube)
 
     # Start rotating the cube
     rotate_cube()
 
     # Run the Tkinter event loop
     root.mainloop()
+
 

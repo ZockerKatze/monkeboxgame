@@ -3,15 +3,20 @@ from nolimit import *
 from box import *
 import tkinter as tk
 from tkinter import ttk
-from debug import readPID
-import threading
+import threading #Use Threading for Performance
 import subprocess
+from credits import *
 
 htop = True
 
 
 def display_window():
     global htop
+
+
+    def credss():
+        credthread = threading.Thread(target=creds(), daemon=True)
+        credthread.start()
 
     def quitfunction():
         root.destroy()
@@ -32,49 +37,10 @@ def display_window():
         cubethread = threading.Thread(target=cuberotate(), deamon=True)
         cubethread.start()
 
-
-    def debug_action():
-
-        """
-
-        this will not properly work!
-        if you run debug through menu it will continue running when exited
-        idk why
-
-        If you want to enable the real "debug file" that works then uncomment the debug_thread var
-        and comment out starting htop and cleanuphtop!
-
-        """
-
-
-        if htop:
-            def run_htop():
-                global htop_process
-                htop_process = subprocess.Popen(["htop"])
-            ndbgth = threading.Thread(target=run_htop(), daemon=True)
-            ndbgth.start()
-
-            ## what is happening here? --> atexit.register(cleanup_htop)
-
-        else:
-            pass
-
-        def cleanup_htop():
-            if "htop_process" in globals() and htop_process.poll() is None:
-                htop_process.terminate()
-
-
-        # make a new thread here because the debug was cockblocking the tkinter app
-
-    #    debug_thread = threading.Thread(target=readPID, daemon=True)
-    #    debug_thread.start()
-
-
-
     # Create the main window
     root = tk.Tk()
     root.title("Menu")
-    root.geometry("480x320")
+    root.geometry("480x420")
 
 
     # Apply dark theme colors
@@ -100,16 +66,15 @@ def display_window():
     button2 = ttk.Button(root, text="Run Endless!", command=button2_action)
     button2.pack(pady=20)
 
-    # Add Debug button
-    #debugbtn = ttk.Button(root, text="Debug", command=debug_action)
-    #debugbtn.pack(pady=20)
-
     cubebtn = ttk.Button(root, text="TkInter Test", command=cube_action)
     cubebtn.pack(pady=20)
 
     # Add Quit button
     quitbutton = ttk.Button(root, text="Quit", command=quitfunction)
     quitbutton.pack(pady=20)
+
+    creadbtn = ttk.Button(root, text="Credits", command=credss)
+    creadbtn.pack(pady=20)
 
     # Run the main loop
     root.mainloop()
