@@ -1,3 +1,4 @@
+from cube import *
 from nolimit import *
 from box import *
 import tkinter as tk
@@ -27,6 +28,11 @@ def display_window():
         nolthread.start()
         root.destroy()
 
+    def cube_action():
+        cubethread = threading.Thread(target=cuberotate(), deamon=True)
+        cubethread.start()
+
+
     def debug_action():
 
         """
@@ -48,7 +54,7 @@ def display_window():
             ndbgth = threading.Thread(target=run_htop(), daemon=True)
             ndbgth.start()
 
-            atexit.register(cleanup_htop)
+            ## what is happening here? --> atexit.register(cleanup_htop)
 
         else:
             pass
@@ -95,8 +101,11 @@ def display_window():
     button2.pack(pady=20)
 
     # Add Debug button
-    debugbtn = ttk.Button(root, text="Debug", command=debug_action)
-    debugbtn.pack(pady=20)
+    #debugbtn = ttk.Button(root, text="Debug", command=debug_action)
+    #debugbtn.pack(pady=20)
+
+    cubebtn = ttk.Button(root, text="TkInter Test", command=cube_action)
+    cubebtn.pack(pady=20)
 
     # Add Quit button
     quitbutton = ttk.Button(root, text="Quit", command=quitfunction)
