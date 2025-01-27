@@ -6,7 +6,7 @@ import time
 
 def creds():
     tester = ["Jeremias","Eli","Marian","Niklas"]
-    idea = ["Neuralink"]
+    idea = ["Neuralink","ChatGPT"]
     writers = ["Rattatwinko"]
 
     colors = [Fore.RED,Fore.YELLOW,Fore.GREEN,Fore.CYAN,Fore.BLUE,Fore.MAGENTA]

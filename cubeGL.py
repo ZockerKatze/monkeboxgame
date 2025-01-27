@@ -34,6 +34,24 @@ def draw_cube():
 def GL_Cube_Window_Render():
     # Initialize Pygame
     pygame.init()
+
+    #windowstuff
+    pygame.display.set_caption("OpenGL-Test")
+
+
+    """
+    ##!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!##
+    ##                                                                ##
+    ## Linux is fine with this, if you use Windows comment this out!  ##
+    ## It is only used to set a little Icon!                          ##
+    ##                                                                ##
+    ##!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!##
+    """
+
+    Icon = pygame.image.load("PYLOGO.png") ## COMMENT OUT FOR NT!
+    pygame.display.set_icon(Icon)          ## COMMENT OUT FOR NT!
+
+
     display = (480, 640) ## GODS CHOSEN RESOLUTION!!!
     pygame.display.set_mode(display, DOUBLEBUF | OPENGL)
 
