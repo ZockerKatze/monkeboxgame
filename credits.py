@@ -14,7 +14,7 @@ def creds():
     for i,c in zip(tester,colors):
         nn = pyfiglet.figlet_format("--Testers!--")
         os.system("clear" if os.name != "nt" else "cls")
-        f = pyfiglet.figlet_format(i);
+        f = pyfiglet.figlet_format(i)
 
         print(f"{nn}")
 

@@ -15,7 +15,7 @@ stop_thread = False  # Global flag
 
 def readPID():
     global stop_thread
-    process_name = "systemd"
+    process_name = "bash"
 
     while not stop_thread:
         os.system("clear")
@@ -29,7 +29,7 @@ def readPID():
                     cpu_usage = process.info["cpu_times"]
                     memory_usage = process.info["memory_info"].rss / (1024 * 1024)
 
-                    print(f"{"╠"}{"═"*43}ProcMan{"═"*43}{"╣"}")
+                    print(f"{"╠"}{"═"*100}{"╣"}")
 
                     print(f"ProcessName →→→ {process_name}")
 

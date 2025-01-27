@@ -4,10 +4,10 @@ import math
 def cuberotate():
     # Create the root window
     root = tk.Tk()
-    root.title("Rotating Cube")
+    root.title("Manfred")
 
     # Canvas setup
-    canvas = tk.Canvas(root, width=400, height=400, bg="white")
+    canvas = tk.Canvas(root, width=480, height=640, bg="white")
     canvas.pack()
 
     # Define the cube vertices (a unit cube centered at the origin)
@@ -24,8 +24,8 @@ def cuberotate():
     ]
 
     # Projection parameters
-    center_x, center_y = 200, 200  # Center of the canvas
-    scale = 500  # Scaling factor
+    center_x, center_y = 240, 320  # Center of the canvas
+    scale = 600  # Scaling factor
 
 
     # if you dont include this it will crash!
@@ -63,7 +63,7 @@ def cuberotate():
 
             # Apply rotation on Y axis
             temp_x = rotated_x
-            rotated_x = rotation_matrix_y[0][0] * temp_x + rotation_matrix_y[0][2] * rotated_z
+            rotated_x = rotation_matrix_y[0][0] * temp_x + rotation_matrix_y[0][2]  * rotated_z
             rotated_z = rotation_matrix_y[2][0] * temp_x + rotation_matrix_y[2][2] * rotated_z
 
             # Project onto 2D plane (perspective projection)
