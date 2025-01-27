@@ -1,7 +1,7 @@
 import os
 
 # import locals
-
+from cubeGL import *
 from cube import *
 from nolimit import *
 from box import *
@@ -44,10 +44,15 @@ def display_window():
         cubethread = threading.Thread(target=cuberotate(), deamon=True)
         cubethread.start()
 
+    def RUNGL():
+        glthread = threading.Thread(target=GL_Cube_Window_Render, daemon=True)
+        glthread.start()
+
+
     # Create the main window
     root = tk.Tk()
     root.title("Menu")
-    root.geometry("480x420")
+    root.geometry("480x480")
 
 
     # Apply dark theme colors
@@ -75,6 +80,9 @@ def display_window():
 
     cubebtn = ttk.Button(root, text="tkinter test", command=cube_action)
     cubebtn.pack(pady=20)
+
+    GLbtn = ttk.Button(root,text="OpenGL Test", command=RUNGL)
+    GLbtn.pack(pady=20)
 
     # Add Quit button
     quitbutton = ttk.Button(root, text="Quit", command=quitfunction)
