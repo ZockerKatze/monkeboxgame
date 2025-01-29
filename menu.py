@@ -1,16 +1,17 @@
 import os
+import tkinter as tk
+from tkinter import ttk
+import threading #Use Threading for Performance
 
-# import locals
+
+# locals
+
 from cubeGL import *
 from cube import *
 from nolimit import *
 from box import *
 from credits import *
 
-
-import tkinter as tk
-from tkinter import ttk
-import threading #Use Threading for Performance
 
 def display_window():
     global htop

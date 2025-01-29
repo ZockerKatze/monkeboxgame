@@ -4,7 +4,7 @@ import math
 def cuberotate():
     # Create the root window
     root = tk.Tk()
-    root.title("TkInter-DemTkInter-Demoo")
+    root.title("tkdemo")
 
     # Canvas setup
     canvas = tk.Canvas(root, width=480, height=640, bg="white")
@@ -93,10 +93,6 @@ def cuberotate():
 
     # Run the Tkinter event loop
     root.mainloop()
-
-    ## check if app running if not destroy
-    ## this does not work for multiple running threads?
-
 
     while root.mainloop() == True:
         pass
